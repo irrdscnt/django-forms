@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Series Detail</title>
+</head>
+<body>
+<center>
+  <h1><b>Название</b> - {{series.title}}</h1>
+  <p><b>Описание</b> - {{series.description}}</p>
+  <img src="{{series.image.url}}" alt="" width="200" height="200">
+  <p><b>Дата выхода</b> - <i>{{series.date}}</i></p>
+</center>
+</body>
+</html>

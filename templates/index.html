@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Series</title>
+</head>
+<body>
+
+<div>
+<ul>
+{% for i in serie %}
+    <li>
+        <h2>{{ i.title }}</h2>
+        <p>{{ i.description }}</p>
+        <img src="{{ i.image.url }}" alt="" width="100" height="100">
+        <p>{{ i.date }}</p>
+        <button class="btn">
+            <a href="/series_detail/{{i.id}}">Подробнее</a>
+        </button>
+        <button class="btn">
+            <a href="{% url 'cinema:delete' i.pk %}"> Удалить </a>
+        </button>
+        <button class="btn">
+            <a href="{% url 'cinema:update' i.pk %}"">Изменить данные</a>
+        </button>
+    </li>
+{% endfor %}
+</ul>
+</div>
+
+</body>
+</html>

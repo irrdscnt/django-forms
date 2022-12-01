@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+    <h1>Обновление сериала</h1>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="update">
+</form>
+
+
+</body>
+</html>
+<!-- {% block content %}
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="fw-bold">Edit Product</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="" class="form-label">Title</label>
+                                <input type="text" Required title="title" value="{{ prod.title }}" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Descritpion</label>
+                                <input type="text" Required name="description" value="{{ prod.description }}" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Date</label>
+                                <input type="text" Required name="date" value="{{ prod.date }}" class="form-control">
+                            </div>
+                             <div class="mb-3">
+                                {% if prod.image %}
+                                    <img src="{{ prod.image.url }}" alt="image here" class="prod-size">
+                                {% endif %}
+                                <label for="" class="form-label">Image</label>
+                                <input type="file" name="image" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-warning">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %} -->
+<!-- <h1>Update Series</h1>
+
+<form action="updaterecord/{{ prod.id }}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+Title:<br>
+<input name="title" value="{{ prod.title }}">
+<br><br>
+description:<br>
+<input name="description" value="{{ prod.description }}">
+<br><br>
+Image:<br>
+<input name="image" value="{{ prod.image }}">
+<br><br>
+Date:<br>
+<input name="date" value="{{ prod.date }}">
+<br><br>
+<input type="submit" value="Submit">
+</form> -->
