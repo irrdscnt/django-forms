@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404,render
 from .models import Serie
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
-from django.views.generic import ListView, FormView
+from django.views.generic import ListView, FormView,DetailView
 from . forms import AddForm
 from django.urls import reverse
 from . import parser, models, forms
@@ -22,6 +22,10 @@ def delete(request, id):
 def find_by_id(request, id):
     series = get_object_or_404(models.Serie, id=id)
     return render(request, "detail.html", {"series": series})
+
+class SerieDetailView(DetailView):
+    model = Serie
+    template_name = "detail.html"
 
 #Post method
 class AddSeries(CreateView):
