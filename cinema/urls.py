@@ -9,4 +9,6 @@ urlpatterns = [
     path('add/', views.AddSeries.as_view(), name='add'),
     path('delete/<int:pk>', views.SerieDeleteView.as_view(), name='delete'),
     path('update/<int:pk>', views.SerieUpdateView.as_view(), name="update"),
+    path('parser_film/', views.ParserFormView.as_view(), name='parse_func'),
+	path('parser_film_info/', views.ParserView.as_view(), name='parse_view'),
     ]
