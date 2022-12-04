@@ -5,7 +5,7 @@ from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.views.generic import ListView, FormView,DetailView
 from . forms import AddForm
 from django.urls import reverse
-from . import parser, models, forms
+from . import models, forms
 from django.views import generic
 
 
@@ -45,23 +45,3 @@ class SerieDeleteView(DeleteView): # new
     model = Serie
     template_name = "confirm_delete.html"
     success_url = '/'
-
-class ParserView(ListView):
-    model = models.TvParser
-    template_name = 'film_list.html'
-
-    def get_queryset(self):
-        return models.TvParser.objects.all()
-
-
-class ParserFormView(FormView):
-    template_name = 'parser_film.html'
-    form_class = forms.ParserForm
-
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            form.parser_data()
-            return HttpResponse('<h1>Данные взяты............</h1>')
-        else:
-            return super(ParserFormView, self).post(request, *args, **kwargs)
