@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laptops List</title>
+</head>
+<body>
+<center>
+<h1>Ноутбуки</h1>
+    {% for i in object_list %}
+        <p>
+            <h2>{{ i.title }}</h2> - {{ i.price }}
+        </p>
+        <img src="{{ i.image }}" alt="" width="300" height="250">
+
+    {% endfor %}
+</center>
+</body>
+</html>
