@@ -9,8 +9,9 @@
 <h1>Ноутбуки</h1>
     {% for i in object_list %}
         <p>
-            <h2>{{ i.title }}</h2> - {{ i.price }}
+            <h2>{{ i.title_text }}</h2> - {{ i.price }}
         </p>
+        <h3><a href="{{i.title}}">Подробнее</a></h3>
         <img src="{{ i.image }}" alt="" width="300" height="250">
 
     {% endfor %}

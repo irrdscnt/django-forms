@@ -24,7 +24,8 @@ def get_data(html):
     for item in items:
         nout.append(
             {
-                'title': item.find('span', class_='prouct_name').get_text(),
+                'title': URL + item.find('a').get('href'),
+                'title_text': item.find('span', class_='prouct_name').get_text(),               
                 'price': item.find('span', class_='price').get_text(),
                 'image': URL + item.find('a', class_='product-image-link').find('img').get('src')
             }
